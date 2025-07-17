@@ -1,0 +1,56 @@
+{
+	"name": "CopyMySQL-to-PostGre",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy-bugs-to-bugs",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureMySqlSource",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "AzurePostgreSqlSink",
+						"writeBatchSize": 1000000,
+						"writeBatchTimeout": "00:30:00",
+						"writeMethod": "CopyCommand"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "AzureMySqlTable1_bugs_source",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "AzurePostgreSqlTable1_bugs_target",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2025-07-15T07:56:13Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

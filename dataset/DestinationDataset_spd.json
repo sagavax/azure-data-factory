@@ -1,0 +1,41 @@
+{
+	"name": "DestinationDataset_spd",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "mysqldb4",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureMySqlTable",
+		"schema": [
+			{
+				"name": "event_id",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "event",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "module",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "event_date",
+				"type": "datetime",
+				"precision": 0,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"tableName": "application_events"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

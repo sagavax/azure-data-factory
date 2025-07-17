@@ -1,0 +1,9 @@
+{
+	"name": "mysql-to-postgre",
+	"location": "westeurope",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "607f2ffb-ea25-4f5f-a496-1efce33c817d",
+		"tenantId": "5e50498c-03b4-429e-8e39-f383939c5912"
+	}
+}

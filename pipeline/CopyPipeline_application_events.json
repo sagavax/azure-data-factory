@@ -1,0 +1,114 @@
+{
+	"name": "CopyPipeline_application_events",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy_spd",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "application_events"
+					},
+					{
+						"name": "Destination",
+						"value": "application_events"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "AzureMySqlSource"
+					},
+					"sink": {
+						"type": "AzureMySqlSink",
+						"writeBatchSize": 10000,
+						"writeBatchTimeout": "00:00:30"
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "event_id",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "event_id",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "event",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "event",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "module",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "module",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "event_date",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								},
+								"sink": {
+									"name": "event_date",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_spd",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_spd",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2025-07-17T13:34:05Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

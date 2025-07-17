@@ -1,0 +1,59 @@
+{
+	"name": "AzureMySqlTable1_bugs_source",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureMySql1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureMySqlTable",
+		"schema": [
+			{
+				"name": "bug_id",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "bug_title",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "bug_text",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "priority",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "status",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "is_fixed",
+				"type": "tinyint",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "added_date",
+				"type": "datetime",
+				"precision": 0,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"tableName": "bugs"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

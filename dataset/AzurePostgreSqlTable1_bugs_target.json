@@ -1,0 +1,66 @@
+{
+	"name": "AzurePostgreSqlTable1_bugs_target",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzurePostgreSql1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzurePostgreSqlTable",
+		"schema": [
+			{
+				"name": "my_row_id",
+				"type": "bigint",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "bug_id",
+				"type": "integer",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "bug_title",
+				"type": "character varying",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "bug_text",
+				"type": "text",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "priority",
+				"type": "character varying",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "status",
+				"type": "character varying",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "is_fixed",
+				"type": "smallint",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "added_date",
+				"type": "timestamp without time zone",
+				"precision": 0,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "minecraft_db",
+			"table": "bugs"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
